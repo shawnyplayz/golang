@@ -8,7 +8,8 @@ import (
 
 func RegisterRoutes(router *gin.Engine) {
 	api := router.Group("/api")
-
+//User routes
+api.POST("/signup", controllers.Signup)
 	// Customer routes
 	api.GET("/customers", controllers.GetCustomers)
 	api.GET("/customers/:id", controllers.GetCustomerByID)

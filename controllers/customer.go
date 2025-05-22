@@ -72,6 +72,7 @@ func UpdateCustomer(c *gin.Context) {
 		LastName:        updatedCustomer.LastName,
 		Phone: 			updatedCustomer.Phone,
 		Email:         updatedCustomer.Email,
+		Address:         updatedCustomer.Address,
 		Vehicles : updatedCustomer.Vehicles,
 	}).Error; err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})

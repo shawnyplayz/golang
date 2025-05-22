@@ -3,6 +3,7 @@ package config
 import (
 	"fmt"
 	"gin/models"
+	"gin/seeders"
 	"log"
 
 	"gorm.io/driver/mysql"
@@ -23,8 +24,9 @@ func ConnectDatabase() {
 	fmt.Println("Connected to MySQL database")
 
 	// Auto-migrate your models
-	err = DB.AutoMigrate(&models.Customer{}, &models.Vehicle{})
-
+	err = DB.AutoMigrate(&models.Customer{}, &models.Vehicle{}, &models.Role{},&models.User{})
+	//Seeding the needful
+	seeders.SeedRoles(DB)
 	if err != nil {
 		log.Fatal("Failed to migrate database:", err)
 	}
