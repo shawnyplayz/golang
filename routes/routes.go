@@ -8,8 +8,15 @@ import (
 
 func RegisterRoutes(router *gin.Engine) {
 	api := router.Group("/api")
-//User routes
-api.POST("/signup", controllers.Signup)
+	//User routes
+	api.GET("/users", controllers.GetUsers)
+	api.POST("/signup", controllers.Signup)
+	api.POST("/login", controllers.Login)
+	api.PUT("/user/:id", controllers.UpdateUser)
+	api.DELETE("/user/:id", controllers.DeleteUser)
+	api.POST("/api/send-reset-link", controllers.SendResetLink)
+	api.POST("/api/reset-password", controllers.ResetPassword)
+
 	// Customer routes
 	api.GET("/customers", controllers.GetCustomers)
 	api.GET("/customers/:id", controllers.GetCustomerByID)
