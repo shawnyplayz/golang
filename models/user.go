@@ -10,6 +10,5 @@ type User struct {
 	Password     string `json:"password" gorm:"not null"`
 	RoleAccessID uint   `json:"role_access_id"` // maps to Role.AccessID
 	IsDev        bool   `json:"isDev" gorm:"default:false"`
-
-	Role Role `gorm:"foreignKey:RoleAccessID;references:AccessID;constraint:OnUpdate:CASCADE,OnDelete:CASCADE"`
+	Role         Role   `gorm:"foreignKey:RoleAccessID;references:AccessID;constraint:OnUpdate:CASCADE,OnDelete:CASCADE"`
 }

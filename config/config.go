@@ -24,7 +24,7 @@ func ConnectDatabase() {
 	fmt.Println("Connected to MySQL database")
 
 	// Auto-migrate your models
-	err = DB.AutoMigrate(&models.Customer{}, &models.Vehicle{}, &models.Role{},&models.User{})
+	err = DB.AutoMigrate(&models.Customer{}, &models.Vehicle{}, &models.Role{}, &models.User{}, models.JobCard{})
 	//Seeding the needful
 	seeders.SeedRoles(DB)
 	if err != nil {

@@ -30,5 +30,9 @@ func RegisterRoutes(router *gin.Engine) {
 	api.POST("/vehicles", controllers.CreateVehicle)
 	api.PUT("/vehicles/:id", controllers.UpdateVehicle)
 	api.DELETE("/vehicles/:id", controllers.DeleteVehicle)
-
+	// Job Card Routes
+	api.GET("/jobcard", controllers.GetJobCards)
+	api.POST("/jobcard", controllers.CreateJobCards)
+	api.PUT("/jobcard/:id", controllers.UpdateJobCard)
+	api.DELETE("/jobcard/:id", controllers.DeleteJobCard)
 }
